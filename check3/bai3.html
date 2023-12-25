@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra bài 3</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kiểm tra mã sinh viên</h1>
+    <input type="text" id="studentIdInput" placeholder="Nhập mã sinh viên (7 số)">
+    <button onclick="kiemTraMa()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTraMa() {
+            const studentId = document.getElementById('studentIdInput').value;
+            const result = document.getElementById('result');
+
+            if (studentId.length !== 7 || isNaN(studentId)) {
+                result.textContent = "Mã sinh viên không hợp lệ. Vui lòng nhập 7 số.";
+                return;
+            }
+
+            const num = parseInt(studentId);
+            if (isPrime(num)) {
+                result.textContent = `${studentId} là số nguyên tố.`;
+            } else {
+                result.textContent = `${studentId} không phải là số nguyên tố.`;
+            }
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

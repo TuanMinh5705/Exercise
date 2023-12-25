@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra bài 2</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kiểm tra và in ra số chẵn hoặc số lẻ</h1>
+    <input type="number" id="numberInput" placeholder="Nhập số">
+    <button onclick="kiemTraVaInSo()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTraVaInSo() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            const result = document.getElementById('result');
+
+            if (number % 2 === 0) {
+                let output = '';
+                for (let i = 0; i <= number; i += 2) {
+                    output += i + ' ';
+                }
+                result.textContent = `Các số chẵn từ 0 đến ${number}: ${output}`;
+            } else {
+                let output = '';
+                for (let i = 1; i <= number; i += 2) {
+                    output += i + ' ';
+                }
+                result.textContent = `Các số lẻ từ 0 đến ${number}: ${output}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

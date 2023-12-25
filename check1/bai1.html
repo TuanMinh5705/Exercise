@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra 1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kiểm tra số ngày sinh chẵn hay lẻ</h1>
+    <input type="number" id="numberInput" placeholder="Nhập số ngày sinh">
+    <button onclick="kiemTraSo()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemTraSo() {
+            const number = document.getElementById('numberInput').value;
+            const result = document.getElementById('result');
+
+            if (number % 2 === 0) {
+                result.textContent = `${number} là số chẵn.`;
+            } else {
+                result.textContent = `${number} là số lẻ.`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
